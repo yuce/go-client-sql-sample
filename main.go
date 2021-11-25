@@ -66,8 +66,12 @@ func createMapping(db *sql.DB, mapName string) error {
 // It uses SINK INTO instead of INSERT INTO in order to update already existing entries.
 func populateMap(db *sql.DB, mapName string, employess []Employee) error {
 	q := fmt.Sprintf(`SINK INTO "%s"(__key, age, name) VALUES (?, ?, ?)`, mapName)
+	stmt, err := db.Prepare(q)
+	if err != nil {
+		return err
+	}
 	for i, e := range employess {
-		if _, err := db.Exec(q, i, e.Age, e.Name); err != nil {
+		if _, err := stmt.Exec(i, e.Age, e.Name); err != nil {
 			return fmt.Errorf("populating map: %w", err)
 		}
 	}
