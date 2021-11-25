@@ -1,6 +1,6 @@
 # Go SQL Driver for Hazelcast Sample
 
-This project demonstrates how to use the Hazelcast database/sql driver.
+This project demonstrates how to use the Hazelcast [database/sql](https://pkg.go.dev/database/sql) driver.
 
 ## Usage
 
