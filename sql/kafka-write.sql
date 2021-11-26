@@ -1,0 +1,3 @@
+INSERT INTO trades VALUES (1, 'ABCD', 5.5, 10);
+INSERT INTO trades VALUES (2, 'EFGH', 14, 20);
+INSERT INTO trades VALUES (3, 'AFGH', 20, 10);
