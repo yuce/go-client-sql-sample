@@ -19,3 +19,7 @@ Make sure you use [Hazelcast Platform 5.0](https://hazelcast.com/get-started/) a
 
     $ sqlrun -f myfile.sql
     $ sqlrun -c "10.20.30.40:5701;ClusterName=prod" -f myfile.sql
+
+It is also possible to execute an SQL string:
+
+    $ sqlrun -e "select * from employees"
