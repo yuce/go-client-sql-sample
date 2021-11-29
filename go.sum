@@ -21,8 +21,8 @@ github.com/tklauser/go-sysconf v0.3.4 h1:HT8SVixZd3IzLdfs/xlpq0jeSfTX57g1v6wB1Eu
 github.com/tklauser/go-sysconf v0.3.4/go.mod h1:Cl2c8ZRWfHD5IrfHo9VN+FX9kCFjIOyVklgXycLB6ek=
 github.com/tklauser/numcpus v0.2.1 h1:ct88eFm+Q7m2ZfXJdan1xYoXKlmwsfP+k88q05KvlZc=
 github.com/tklauser/numcpus v0.2.1/go.mod h1:9aU+wOc6WjUIZEwWMP62PL/41d65P+iks1gBkr4QyP8=
-github.com/yuce/hazelcast-go-client v1.1.2-0.20211125144946-502b3598192c h1:q1tKhSojriTJi9kAkaNC7/HFuWkeYdsC1JpomsSt908=
-github.com/yuce/hazelcast-go-client v1.1.2-0.20211125144946-502b3598192c/go.mod h1:fxnzya2+IbQ5Y3CjpIe8RLqoDpzMcBwdKEkUXClqTFs=
+github.com/yuce/hazelcast-go-client v1.1.2-0.20211126095718-c5e8451306b1 h1:yuYGDj1D/4he3Kndzp8qtHQjtef+Nwct+roADVI2IW4=
+github.com/yuce/hazelcast-go-client v1.1.2-0.20211126095718-c5e8451306b1/go.mod h1:fxnzya2+IbQ5Y3CjpIe8RLqoDpzMcBwdKEkUXClqTFs=
 go.uber.org/goleak v1.1.10 h1:z+mqJhf6ss6BSfSM671tgKyZBFPTTJM+HLxnhPC3wu0=
 go.uber.org/goleak v1.1.10/go.mod h1:8a7PlsEVH3e/a/GLqe5IIrQx6GzcnRmZEufDUTk4A7A=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=

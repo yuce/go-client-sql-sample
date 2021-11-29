@@ -73,8 +73,9 @@ func fatal(format string, args ...interface{}) {
 func main() {
 	connStr := flag.String("c", "", "connection string")
 	path := flag.String("f", "", "path to the SQL file")
+	cmd := flag.String("e", "", "execute the given SQL string")
 	flag.Parse()
-	if *path == "" {
+	if *path == "" && *cmd == "" {
 		flag.Usage()
 		os.Exit(1)
 	}
@@ -83,12 +84,21 @@ func main() {
 		fatal("opening connection: %s", err.Error())
 	}
 	defer db.Close()
-	b, err := ioutil.ReadFile(*path)
-	if err != nil {
-		fatal("reading SQL file: %s", err.Error())
+	if *path != "" && *cmd != "" {
+		fatal("-f and -e are mutually exclusive")
 	}
-	text := string(b)
-	lines := strings.Split(text, ";\n")
+	var lines []string
+	if *path != "" {
+		b, err := ioutil.ReadFile(*path)
+		if err != nil {
+			fatal("reading SQL file: %s", err.Error())
+		}
+		text := string(b)
+		lines = strings.Split(text, ";\n")
+	}
+	if *cmd != "" {
+		lines = strings.Split(*cmd, ";")
+	}
 	for _, line := range lines {
 		fmt.Println(">>>", line)
 		if err := execSQL(db, line); err != nil {
