@@ -16,7 +16,8 @@ func execSQL(db *sql.DB, text string) error {
 	if text == "" {
 		return nil
 	}
-	if strings.HasPrefix(strings.ToLower(text), "select") {
+	lt := strings.ToLower(text)
+	if strings.HasPrefix(lt, "select") || strings.HasPrefix(lt, "show") {
 		return query(db, text)
 	}
 	return exec(db, text)
