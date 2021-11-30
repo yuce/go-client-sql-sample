@@ -45,7 +45,8 @@ func query(db *sql.DB, text string) error {
 			return fmt.Errorf("scanning row: %w", err)
 		}
 		for i, v := range row {
-			rowStr[i] = fmt.Sprintf("%v", *(v.(*string)))
+			val := *(v.(*interface{}))
+			rowStr[i] = fmt.Sprintf("%v", val)
 		}
 		fmt.Println(strings.Join(rowStr, "\t"))
 	}
