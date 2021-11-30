@@ -37,7 +37,7 @@ func query(db *sql.DB, text string) error {
 	fmt.Println("---")
 	row := make([]interface{}, len(cols))
 	for i := 0; i < len(cols); i++ {
-		row[i] = new(string)
+		row[i] = new(interface{})
 	}
 	rowStr := make([]string, len(cols))
 	for rows.Next() {
