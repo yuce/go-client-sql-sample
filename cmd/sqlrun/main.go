@@ -37,7 +37,7 @@ func query(db *sql.DB, text string) error {
 	fmt.Println("---")
 	row := make([]interface{}, len(cols))
 	for i := 0; i < len(cols); i++ {
-		row[i] = new(string)
+		row[i] = new(interface{})
 	}
 	rowStr := make([]string, len(cols))
 	for rows.Next() {
@@ -45,7 +45,8 @@ func query(db *sql.DB, text string) error {
 			return fmt.Errorf("scanning row: %w", err)
 		}
 		for i, v := range row {
-			rowStr[i] = fmt.Sprintf("%v", *(v.(*string)))
+			val := *(v.(*interface{}))
+			rowStr[i] = fmt.Sprintf("%v", val)
 		}
 		fmt.Println(strings.Join(rowStr, "\t"))
 	}
