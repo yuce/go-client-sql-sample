@@ -125,7 +125,7 @@ func randomEmployees(count int) []Employee {
 func main() {
 	// Connect to the local Hazelcast server.
 	// Uses the unisocket option just for demonstration.
-	db, err := sql.Open("hazelcast", "localhost:5701;Cluster.Unisocket=true")
+	db, err := sql.Open("hazelcast", "hz://localhost:5701")
 	if err != nil {
 		panic(err)
 	}
